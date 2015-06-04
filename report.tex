@@ -1,0 +1,128 @@
+%set up the document
+\documentclass[12pt, a4paper,]{report}
+
+%package for encoding and and babel in spanish
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,mexico]{babel}
+
+%package for set margin
+\usepackage[left=3cm, right=3cm, top=6cm, bottom=4cm]{geometry}
+
+%package for line spacing
+\usepackage{setspace}
+
+%package for images
+\usepackage[pdftex]{graphicx}
+
+%set path for images
+\graphicspath{ {figures/} }
+
+%package for custom title of chapter
+\usepackage{titlesec}
+
+%set title of chapter
+\titleformat
+{\chapter}                  %comand
+[display]                   %shape
+{\bfseries\large\filcenter} %format
+{\chaptertitlename\ \thechapter}    %label
+{.2em}                      %space between label and title
+{}                          %insert code before title
+
+%package for advanced cite
+\usepackage{csquotes}
+
+%package for bibliography with biblatex
+\usepackage[backend=biber,style=apa,bibencoding=latin1]{biblatex}
+
+%add path of bibliographic data
+\addbibresource{bibliography/refences.bib}
+
+%set local language for apa
+\DeclareLanguageMapping{spanish}{spanish-apa}
+
+%package for custom appendix
+\usepackage{appendix}
+
+%define variables for labels of appendix in spanish-Perú
+\newcommand{\appendixnameperu}{Ánexo}
+\newcommand{\appendixpagenameperu}{Ánexos}
+
+%allocate defined variables
+\addto\captionsspanish{
+    \renewcommand\appendixname{\appendixnameperu}
+    \renewcommand\appendixtocname{\appendixpagenameperu}
+    \renewcommand\appendixpagename{\appendixpagenameperu}
+}
+%-------------------------------------------------------------------
+
+%start document
+\begin{document}
+
+    %import cover
+    \include{intro/cover}
+
+    %set line spacing: double
+    \doublespace
+
+    %import thanks and acknowledgement
+    \include{intro/thanks}
+    \include{intro/acknowledgements}
+
+    %set line spacing: intermediate for indexes
+    \onehalfspacing
+
+    %start counting in roman
+    \pagenumbering{roman}
+
+    %make indexes: content,figure and tables
+    \tableofcontents
+    \listoffigures
+    \listoftables
+
+    %ends current page and show next content in another sheet
+    \clearpage
+
+    %again set line spacing: double for general content
+    \doublespace
+
+    %start counting on arabic
+    \pagenumbering{arabic}
+
+    %import chapter
+    \include{chapters/introduction}
+    \include{chapters/summary}
+    \include{chapters/institucion}
+    \include{chapters/theory}
+    \include{chapters/tools}
+    \include{chapters/results}
+    \include{chapters/conclusion}
+
+    %enable title for bibliography
+    \printbibheading[heading=bibintoc]
+
+    %enable title for subsection and list refence's books
+    \printbibliography[heading=subbibintoc, type=book, title={LIBROS CONSULTADOS}]
+
+    %enable title for subsection and list refence's articles
+    \printbibliography[heading=subbibintoc, type=article, title={ARTÍCULOS CONSULTADOS}]
+
+    %enable title for subsection and list electronic references
+    \printbibliography[heading=subbibintoc, type=online, title={REFERENCIAS ELECTRÓNICAS}]
+
+    %ends current page and show next content in another sheet
+    \clearpage
+
+    %start appendix
+    \appendix
+
+    %add page for appendix
+    \appendixpage
+
+    %add appendix for table of contents
+    \addappheadtotoc
+
+    %include all additional documents
+    \include{appendices/appendix-a}
+
+\end{document}
