@@ -17,17 +17,20 @@
 %set path for images
 \graphicspath{ {figures/} }
 
+%package provides control over the typesetting of the \maketitle
+\usepackage{titling}
+
 %package for custom title of chapter
 \usepackage{titlesec}
 
 %set title of chapter
 \titleformat
-{\chapter}                  %comand
-[display]                   %shape
-{\bfseries\large\filcenter} %format
+{\chapter}                  		%comand
+[display]                   		%shape
+{\bfseries\large\filcenter} 		%format
 {\chaptertitlename\ \thechapter}    %label
-{.2em}                      %space between label and title
-{}                          %insert code before title
+{.2em}                      		%space between label and title
+{}                          		%insert code before title
 
 %package for advanced cite
 \usepackage{csquotes}
