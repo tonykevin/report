@@ -15,7 +15,7 @@
 \usepackage[pdftex]{graphicx}
 
 %set path for images
-\graphicspath{ {figures/} }
+\graphicspath{{figures/}}
 
 %package provides control over the typesetting of the \maketitle
 \usepackage{titling}
@@ -36,10 +36,10 @@
 \usepackage{csquotes}
 
 %package for bibliography with biblatex
-\usepackage[backend=biber,style=apa,bibencoding=latin1]{biblatex}
+\usepackage[backend=biber,style=apa,bibencoding=utf8]{biblatex}
 
 %add path of bibliographic data
-\addbibresource{bibliography/refences.bib}
+\addbibresource{bibliography/references.bib}
 
 %set local language for apa
 \DeclareLanguageMapping{spanish}{spanish-apa}
@@ -101,17 +101,20 @@
     \include{chapters/results}
     \include{chapters/conclusion}
 
-    %enable title for bibliography
+    %enable the title for bibliography
     \printbibheading[heading=bibintoc]
 
-    %enable title for subsection and list refence's books
-    \printbibliography[heading=subbibintoc, type=book, title={LIBROS CONSULTADOS}]
+    %enables title for subsection and filters reference books
+    \printbibliography[heading=subbibintoc, type=book, title={Libros consultados}]
 
-    %enable title for subsection and list refence's articles
-    \printbibliography[heading=subbibintoc, type=article, title={ARTÍCULOS CONSULTADOS}]
+    %enables title for subsection and filters reference thesis
+    \printbibliography[heading=subbibintoc, type=thesis, title={Tesis consultadas}]
 
-    %enable title for subsection and list electronic references
-    \printbibliography[heading=subbibintoc, type=online, title={REFERENCIAS ELECTRÓNICAS}]
+    %enables title for subsection and filters reference articles
+    \printbibliography[heading=subbibintoc, type=article, title={Artículos consultados}]
+
+    %enables title for subsection and electronic references
+    \printbibliography[heading=subbibintoc, type=online, title={Referencias electrónicas}]
 
     %ends current page and show next content in another sheet
     \clearpage
