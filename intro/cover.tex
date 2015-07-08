@@ -15,20 +15,19 @@
 \newcommand{\college}{Escuela Académico Profesional de Ingeniería en Informática y Sistemas}
 
 %subject
-\newcommand{\subjectname}{Informe de Prácticas Pre - Profesionales}
+\newcommand{\subjectname}{Informe de Prácticas Pre-Profesionales}
 
 %area and institution
-\newcommand{\institutionname}{ÁREA DE INNOVACIÓN PEDAGÓGICA - MODESTO BASADRE}
+\newcommand{\institutionname}{ÁREA DE INNOVACIÓN PEDAGÓGICA-MODESTO BASADRE}
 
 %institution address
-\newcommand{\institutionaddress}{TACNA - PERÚ}
+\newcommand{\institutionaddress}{TACNA-PERÚ}
 
 %--------------------------------------------------------------
 
 %redefine margin top
 \newgeometry{top=7cm}
 
-%textf: style bold
 %vspace: vertical scale
 %includegraphics: add a image
 %vfill: vertical length that compliments with next content
@@ -38,35 +37,37 @@
 
 %center content
 \begin{center}
-\textbf{
-\univname\\
-\vspace{.5cm}
-\deptname\\
-\vspace{1cm}
-\college\\
-\vspace{.5cm}
-\includegraphics[scale=.2]{unjbg}\\
-\vspace{.5cm}
-\subjectname\\
-\vspace{.5cm}
-\thetitle\\
-\vspace{1cm}
-Institución:\\
-\vspace{.3cm}
-\institutionname\\
-\vspace{1cm}
-Presentado por:\\
-\vspace{.3cm}
-\theauthor\\
-\vspace{1cm}
-\thedate
-\vfill
-\institutionaddress\\
-\vspace{.3cm}
-\the\year}
+
+%textbf: bold
+\textbf{\
+    \univname\\
+    \vspace{.5cm}
+    \deptname\\
+    \vspace{1cm}
+    \college\\
+    \vspace{.5cm}
+    \includegraphics[scale=.2]{unjbg}\\
+    \vspace{.5cm}
+    \subjectname\\
+    \vspace{.5cm}
+    \thetitle\\
+    \vspace{1cm}
+    Institución:\\
+    \vspace{.3cm}
+    \institutionname\\
+    \vspace{1cm}
+    Presentado por:\\
+    \vspace{.3cm}
+    \theauthor\\
+    \vspace{1cm}
+    \thedate\vfill
+    \institutionaddress\\
+    \vspace{.3cm}
+    \the\year{}
+}
 
 \end{center}
 \end{titlepage}
 
 %restore margin defined on preamble
-\restoregeometry
+\restoregeometry{}

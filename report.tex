@@ -24,8 +24,7 @@
 \usepackage{titlesec}
 
 %set title of chapter
-\titleformat
-{\chapter}                  		%comand
+\titleformat{\chapter}             	%comand
 [display]                   		%shape
 {\bfseries\huge\filcenter}  		%format
 {\chaptertitlename\ \thechapter}	%label
@@ -52,10 +51,9 @@
 \newcommand{\appendixpagenameperu}{Ánexos}
 
 %allocate defined variables
-\addto\captionsspanish{
-    \renewcommand\appendixname{\appendixnameperu}
-    \renewcommand\appendixtocname{\appendixpagenameperu}
-    \renewcommand\appendixpagename{\appendixpagenameperu}
+\addto\captionsspanish{\renewcommand\appendixname{\appendixnameperu}
+                       \renewcommand\appendixtocname{\appendixpagenameperu}
+                       \renewcommand\appendixpagename{\appendixpagenameperu}
 }
 %-------------------------------------------------------------------
 
@@ -66,17 +64,20 @@
     \include{intro/cover}
 
     %set line spacing: double
-    \doublespace
+    \doublespace{}
 
     %import thanks and acknowledgement
     \include{intro/thanks}
     \include{intro/acknowledge}
 
     %set line spacing: intermediate for indexes
-    \onehalfspacing
+    \onehalfspacing{}
 
     %start counting in roman
     \pagenumbering{roman}
+
+    %sets pagination style
+	\pagestyle{plain}
 
     %make indexes: content,figure and tables
     \tableofcontents
@@ -87,7 +88,7 @@
     \clearpage
 
     %again set line spacing: double for general content
-    \doublespace
+    \doublespace{}
 
     %start counting on arabic
     \pagenumbering{arabic}
@@ -123,10 +124,10 @@
     \appendix
 
     %add page for appendix
-    \appendixpage
+    \appendixpage{}
 
     %add appendix for table of contents
-    \addappheadtotoc
+    \addappheadtotoc{}
 
     %include all additional documents
     \include{appendices/appendix-a}
