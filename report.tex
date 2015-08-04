@@ -44,7 +44,7 @@
 \DeclareLanguageMapping{spanish}{spanish-apa}
 
 %package for custom appendix
-\usepackage{appendix}
+\usepackage[page,toc]{appendix}
 
 %define variables for labels of appendix in spanish-Perú
 \newcommand{\appendixnameperu}{Ánexo}
@@ -123,13 +123,7 @@
     %start appendix
     \appendix
 
-    %add page for appendix
-    \appendixpage{}
-
-    %add appendix for table of contents
-    \addappheadtotoc{}
-
     %include all additional documents
-    \include{appendices/appendix-a}
+    \include{appendices/appendix}
 
 \end{document}
