@@ -14,6 +14,9 @@
 %package for images
 \usepackage[pdftex]{graphicx}
 
+%package for subfigures
+\usepackage{subfigure}
+
 %set path for images
 \graphicspath{{figures/}}
 
@@ -24,15 +27,25 @@
 \usepackage{titlesec}
 
 %set title of chapter
-\titleformat{\chapter}             	%comand
-[display]                   		%shape
-{\bfseries\huge\filcenter}  		%format
-{\chaptertitlename\ \thechapter}	%label
-{.2em}                      		%space between label and title
-{}                          		%insert code before title
+\titleformat{\chapter}            %comand
+[display]                         %shape
+{\bfseries\huge\filcenter}        %format
+{\chaptertitlename\ \thechapter}  %label
+{.2em}                            %space between label and title
+{}                                %insert code before title
 
 %package for advanced cite
 \usepackage{csquotes}
+
+%package to change the style of itemize
+\usepackage{enumitem}
+
+%package to change the style of tables
+\usepackage{booktabs}
+
+%package custom caption
+\usepackage{caption}
+\captionsetup[table]{labelsep=newline,singlelinecheck=false}
 
 %package for bibliography with biblatex
 \usepackage[backend=biber,style=apa,bibencoding=utf8]{biblatex}
@@ -77,7 +90,7 @@
     \pagenumbering{roman}
 
     %sets pagination style
-	\pagestyle{plain}
+    \pagestyle{plain}
 
     %make indexes: content,figure and tables
     \tableofcontents
